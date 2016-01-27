@@ -3,3 +3,6 @@ node_modules
 
 # Map files
 *.js.map
+
+# Visual Source Code
+.vscode
