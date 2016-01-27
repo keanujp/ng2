@@ -13,6 +13,7 @@ import {HeroService} from './hero.service';
         <label>name: </label>
         <input [(ngModel)]="hero.name" placeholder="name"/>
       </div>
+      <button (click)="gotoHeroes()">Back</button>
     </div>
   `,
   inputs: ['hero']
@@ -27,9 +28,14 @@ export class HeroDetailComponent {
   ) {}
   
   ngOnInit() {
-    console.log('on init');
+    console.log('on init - detail');
     
     let id = this.routeParams.get('id');
-    this.service.getHero(id).then(hero => this.hero = hero);
+    this.hero = this.service.getHero(id);
+    // this.service.getHero(id).then(hero => this.hero = hero);
+  }
+  
+  gotoHeroes() {
+    this.router.navigate(['Heroes']);
   }
 }

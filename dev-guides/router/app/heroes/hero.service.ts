@@ -19,7 +19,7 @@ export class HeroService {
     );
   }
   
-  getHero(id: number) {
+  getHero(id) {
     return HEROES.find(hero => hero.id === id);
   }
 }
